@@ -125,7 +125,7 @@
                 <span class="btn">Register Visit</span>
             </a>
 
-            <a href="frontend/login.php" class="card">
+            <a href="admin/frontend/login.php" class="card">
                 <div class="card-icon">🔐</div>
                 <h2>I'm an Admin</h2>
                 <p>Sign in to manage visitors, departments and reports.</p>
