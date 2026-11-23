@@ -1,4 +1,5 @@
 <?php
+require_once '../../backend/includes/auth.php';
 include '../../backend/config/database.php';
 include '../../backend/includes/header.php';
 include '../../backend/includes/navbar.php';
@@ -184,7 +185,7 @@ include '../../backend/includes/navbar.php';
 
                 <tbody>
                 <?php
-                $sql = "SELECT full_name, person_to_visit, purpose, time_in, status
+                $sql = "SELECT full_name, department, person_to_visit, purpose, time_in, status
                         FROM visitors
                         ORDER BY visit_date DESC, time_in DESC
                         LIMIT 5";
@@ -217,7 +218,7 @@ include '../../backend/includes/navbar.php';
                         </td>
 
                         <td>
-                            <?php echo htmlspecialchars($visitor['person_to_visit']); ?>
+                            <?php echo htmlspecialchars($visitor['department'] ?: $visitor['person_to_visit']); ?>
                         </td>
 
                         <td>
@@ -229,7 +230,15 @@ include '../../backend/includes/navbar.php';
                         </td>
 
                         <td>
-                            <span class="status <?php echo ($visitor['status'] === 'Inside') ? 'inside' : 'checked-out'; ?>">
+                            <?php
+                            $status_class = 'checked-out';
+                            if ($visitor['status'] === 'Inside') {
+                                $status_class = 'inside';
+                            } elseif ($visitor['status'] === 'Expected') {
+                                $status_class = 'expected';
+                            }
+                            ?>
+                            <span class="status <?php echo $status_class; ?>">
                                 <span></span>
                                 <?php echo htmlspecialchars($visitor['status']); ?>
                             </span>

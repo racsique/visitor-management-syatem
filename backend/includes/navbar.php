@@ -16,8 +16,8 @@
     </div>
 
     <div>
-        <strong>Admin</strong>
-        <small>System Administrator</small>
+        <strong><?php echo htmlspecialchars($_SESSION['full_name'] ?? 'Admin'); ?></strong>
+        <small><?php echo htmlspecialchars(ucfirst($_SESSION['role'] ?? 'admin')); ?></small>
     </div>
 </div>
 </nav>

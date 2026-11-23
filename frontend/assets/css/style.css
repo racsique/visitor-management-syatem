@@ -1125,6 +1125,15 @@ body.login-page {
     background: #a2a6b5;
 }
 
+.status.expected {
+    background: #fff4e0;
+    color: #b07a00;
+}
+
+.status.expected span {
+    background: #e8a200;
+}
+
 
 /* =========================================
    RESPONSIVE

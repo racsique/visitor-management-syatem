@@ -1,4 +1,5 @@
 <?php
+require_once '../../backend/includes/auth.php';
 include '../../backend/config/database.php';
 
 $message = "";
