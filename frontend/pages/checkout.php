@@ -1,5 +1,5 @@
 <?php
-include '../config/database.php';
+include '../../backend/config/database.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['visitor_id'])) {
 

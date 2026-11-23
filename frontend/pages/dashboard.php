@@ -1,10 +1,10 @@
 <?php
-include '../config/database.php';
-include '../includes/header.php';
-include '../includes/navbar.php';
+include '../../backend/config/database.php';
+include '../../backend/includes/header.php';
+include '../../backend/includes/navbar.php';
 ?>
 <div class="dashboard-layout">
-    <?php include '../includes/sidebar.php'; ?>
+    <?php include '../../backend/includes/sidebar.php'; ?>
 
 <main class="dashboard-content">
 

@@ -56,7 +56,7 @@ $role = $_SESSION["role"];
                 <span>Dashboard</span>
             </a>
 
-            <a href="register_visitor.php" class="nav-item">
+            <a href="pages/add_visitor.php" class="nav-item">
                 👤
                 <span>Register Visitor</span>
             </a>
@@ -279,7 +279,7 @@ $role = $_SESSION["role"];
 
             <div class="quick-actions">
 
-                <a href="register_visitor.php" class="action-card">
+                <a href="pages/add_visitor.php" class="action-card">
 
                     <span class="action-icon">
                         ➕
@@ -393,7 +393,7 @@ $role = $_SESSION["role"];
                     Registered visitors will appear here.
                 </p>
 
-                <a href="register_visitor.php" class="primary-button">
+                <a href="pages/add_visitor.php" class="primary-button">
                     + Register First Visitor
                 </a>
 

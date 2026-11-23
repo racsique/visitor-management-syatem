@@ -1,5 +1,5 @@
 <?php
-include '../config/database.php';
+include '../../backend/config/database.php';
 
 $message = "";
 $message_type = "";

@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 ini_set('display_startup_errors', 1);
-require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../../backend/config/database.php';
 
 // Get date filters
 $start_date = $_GET['start_date'] ?? '';

@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once "config/database.php";
+require_once __DIR__ . "/../backend/config/database.php";
 
 $error = "";
 
@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <title>Visitors Management System | Login</title>
 
-    <link rel="stylesheet" href="/visitor-management-system/assets/css/style.css?v=2">
+    <link rel="stylesheet" href="/visitor-management-system/frontend/assets/css/style.css?v=2">
 
     <script src="assets/js/script.js" defer></script>
 
