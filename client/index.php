@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "INSERT INTO visitors
         (first_name, last_name, email, gender, id_number, department,
          full_name, phone, person_to_visit, purpose, visit_date, time_in, status)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURDATE(), CURTIME(), 'Expected')"
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURDATE(), CURTIME(), 'Inside')"
     );
 
     if ($stmt === false) {
@@ -58,187 +58,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <link rel="stylesheet" href="../admin/frontend/assets/css/style.css?v=4">
 
-    <style>
-        .client-hero {
-            text-align: center;
-            margin-bottom: 32px;
-        }
-
-        .client-hero .brand-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #fff;
-            border: 1px solid #e4dcff;
-            border-radius: 30px;
-            padding: 8px 18px;
-            font-size: 13px;
-            font-weight: 700;
-            color: #6c4df6;
-            margin-bottom: 20px;
-        }
-
-        .client-hero h1 {
-            font-size: 34px;
-            color: #3d2b8f;
-            margin-bottom: 10px;
-        }
-
-        .client-hero p {
-            color: #777d91;
-            max-width: 560px;
-            margin: 0 auto 24px;
-            line-height: 1.6;
-        }
-
-        .steps {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
-            margin-bottom: 8px;
-        }
-
-        .step {
-            background: #fff;
-            border-radius: 14px;
-            padding: 14px 20px;
-            font-size: 13px;
-            color: #555;
-            box-shadow: 0 4px 14px rgba(61, 43, 143, 0.08);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .step .num {
-            background: #6c4df6;
-            color: #fff;
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 12px;
-            flex-shrink: 0;
-        }
-
-        .admin-link {
-            display: block;
-            text-align: center;
-            margin-top: 24px;
-            font-size: 13px;
-            color: #777d91;
-        }
-
-        .admin-link a {
-            color: #6c4df6;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        .site-footer {
-            background: #ffffff;
-            border-top: 1px solid #e9e4f7;
-            margin-top: 40px;
-            padding: 32px 20px 24px;
-        }
-
-        .footer-inner {
-            max-width: 960px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 24px;
-        }
-
-        .footer-brand {
-            font-weight: 700;
-            color: #3d2b8f;
-            font-size: 16px;
-        }
-
-        .footer-contact {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 18px;
-            align-items: center;
-        }
-
-        .footer-contact a,
-        .footer-contact span {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            color: #555;
-            font-size: 13px;
-            text-decoration: none;
-        }
-
-        .footer-contact a:hover {
-            color: #6c4df6;
-        }
-
-        .footer-contact svg {
-            width: 18px;
-            height: 18px;
-            flex-shrink: 0;
-            fill: currentColor;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 10px;
-        }
-
-        .social-icons a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: #f3efff;
-            color: #6c4df6;
-            transition: background 0.2s ease, color 0.2s ease;
-        }
-
-        .social-icons a:hover {
-            background: #6c4df6;
-            color: #ffffff;
-        }
-
-        .social-icons svg {
-            width: 18px;
-            height: 18px;
-        }
-
-        .footer-bottom {
-            max-width: 960px;
-            margin: 20px auto 0;
-            text-align: center;
-            font-size: 12px;
-            color: #999;
-            border-top: 1px solid #f0eef7;
-            padding-top: 14px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css?v=3">
 </head>
 
-<body class="add-visitor-page" style="background: #f5f1ff !important;">
+<body class="add-visitor-page" style="background: #F3F6F4 !important;">
 
-    <main class="add-visitor-content">
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="navbar-inner">
+
+            <a href="index.php" class="navbar-brand">
+                <img src="logo.png" alt="SecureGate Logo">
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#top" class="active">Home</a></li>
+                <li><a href="#register">Visitor Registration</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <main class="add-visitor-content" id="top">
 
         <!-- LANDING HERO -->
         <div class="client-hero">
-
-            <div class="brand-badge">
-                🛡️ SecureGate Visitor Management
-            </div>
 
             <h1>Welcome, Visitor</h1>
 
@@ -257,13 +110,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
         <!-- PAGE HEADER -->
-        <div class="add-visitor-header">
+        <div class="add-visitor-header" id="register">
 
             <div class="add-visitor-label">
                 VISITOR REGISTRATION
             </div>
 
-            <h1>Visitor Registration</h1>
+            
 
             <p>
                 Fill in the form below to register your visit.
@@ -289,9 +142,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <div class="form-heading">
 
-                <div class="form-heading-icon">
-                    +
-                </div>
+                
 
                 <div>
                     <h2>Visitor Information</h2>
@@ -321,6 +172,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         id="first_name"
                         name="first_name"
                         placeholder="Enter your first name"
+                        pattern="^[A-Za-z]+( [A-Za-z]+)*$"
+                        title="Letters and spaces only"
+                        maxlength="50"
                         required>
 
                 </div>
@@ -339,6 +193,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         id="last_name"
                         name="last_name"
                         placeholder="Enter your last name"
+                        pattern="^[A-Za-z]+( [A-Za-z]+)*$"
+                        title="Letters and spaces only"
+                        maxlength="50"
                         required>
 
                 </div>
@@ -358,6 +215,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         name="email"
                         placeholder="e.g. you@example.com"
                         required>
+
+                    <div class="email-suggestions" id="emailSuggestions"></div>
 
                 </div>
 
@@ -396,6 +255,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         id="phone"
                         name="phone"
                         placeholder="e.g. 0712345678"
+                        maxlength="10"
+                        inputmode="numeric"
+                        pattern="^[07][0-9]{9}$"
+                        title="Enter a 10-digit Kenyan number starting with 0 or 7, e.g. 0712345678"
                         required>
 
                 </div>
@@ -481,14 +344,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
 
-        <div class="admin-link">
-            Are you an administrator? <a href="../admin/frontend/login.php">Admin Login</a>
-        </div>
 
     </main>
 
     <!-- FOOTER -->
-    <footer class="site-footer">
+    <footer class="site-footer" id="contact">
 
         <div class="footer-inner">
 
@@ -550,6 +410,138 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
     </footer>
+
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        navToggle.addEventListener('click', function () {
+            const isOpen = navMenu.classList.toggle('open');
+            navToggle.classList.toggle('open', isOpen);
+            navToggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        navMenu.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                navMenu.classList.remove('open');
+                navToggle.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Email domain suggestions
+        const emailInput = document.getElementById('email');
+        const emailSuggestions = document.getElementById('emailSuggestions');
+        const emailDomains = ['gmail.com', 'yahoo.com', 'icloud.com', 'hotmail.com', 'outlook.com'];
+        let activeIndex = -1;
+
+        function hideEmailSuggestions() {
+            emailSuggestions.classList.remove('open');
+            emailSuggestions.innerHTML = '';
+            activeIndex = -1;
+        }
+
+        function showEmailSuggestions(localPart, partial) {
+            const matches = emailDomains.filter(function (d) {
+                return d.startsWith(partial.toLowerCase());
+            });
+
+            if (!matches.length) {
+                hideEmailSuggestions();
+                return;
+            }
+
+            emailSuggestions.innerHTML = matches.map(function (d) {
+                return '<button type="button" data-domain="' + d + '">@' + d + '</button>';
+            }).join('');
+            emailSuggestions.classList.add('open');
+            activeIndex = -1;
+        }
+
+        emailInput.addEventListener('input', function () {
+            const value = emailInput.value;
+            const atIndex = value.lastIndexOf('@');
+
+            if (atIndex === -1 || atIndex === value.length - 1) {
+                hideEmailSuggestions();
+                return;
+            }
+
+            const localPart = value.slice(0, atIndex);
+            const partial = value.slice(atIndex + 1);
+
+            if (localPart.length === 0 || partial.indexOf(' ') !== -1) {
+                hideEmailSuggestions();
+                return;
+            }
+
+            showEmailSuggestions(localPart, partial);
+        });
+
+        emailInput.addEventListener('keydown', function (e) {
+            const items = emailSuggestions.querySelectorAll('button');
+            if (!items.length) return;
+
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                activeIndex = (activeIndex + 1) % items.length;
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                activeIndex = (activeIndex - 1 + items.length) % items.length;
+            } else if (e.key === 'Enter' && activeIndex > -1) {
+                e.preventDefault();
+                items[activeIndex].click();
+                return;
+            } else if (e.key === 'Escape') {
+                hideEmailSuggestions();
+                return;
+            } else {
+                return;
+            }
+
+            items.forEach(function (item, i) {
+                item.classList.toggle('active', i === activeIndex);
+            });
+        });
+
+        emailSuggestions.addEventListener('mousedown', function (e) {
+            const btn = e.target.closest('button[data-domain]');
+            if (!btn) return;
+
+            const atIndex = emailInput.value.lastIndexOf('@');
+            emailInput.value = emailInput.value.slice(0, atIndex + 1) + btn.dataset.domain;
+            hideEmailSuggestions();
+            emailInput.focus();
+        });
+
+        // Names: letters and spaces only
+        ['first_name', 'last_name'].forEach(function (id) {
+            const input = document.getElementById(id);
+            input.addEventListener('input', function () {
+                input.value = input.value.replace(/[^A-Za-z ]/g, '').replace(/\s+/g, ' ').slice(0, 50);
+            });
+        });
+
+        // Phone number: Kenyan format, digits only, 10 digits starting with 0 or 7
+        const phoneInput = document.getElementById('phone');
+
+        phoneInput.addEventListener('input', function () {
+            let digits = phoneInput.value.replace(/\D/g, '');
+
+            // Strip +254 / 254 country code if pasted
+            if (digits.startsWith('254') && digits.length > 10) {
+                digits = digits.slice(3);
+            }
+
+            phoneInput.value = digits.slice(0, 10);
+        });
+
+        document.addEventListener('click', function (e) {
+            if (!emailSuggestions.contains(e.target) && e.target !== emailInput) {
+                hideEmailSuggestions();
+            }
+        });
+    </script>
 
 </body>
 

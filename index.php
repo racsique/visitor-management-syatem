@@ -7,12 +7,16 @@
 
     <title>SecureGate - Visitor Management System</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: 'Onest', Arial, sans-serif;
         }
 
         body {
@@ -20,7 +24,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #f5f1ff 0%, #e8e0ff 100%);
+            background: linear-gradient(135deg, #F3F6F4 0%, #e8efec 100%);
             padding: 20px;
         }
 
@@ -40,7 +44,7 @@
 
         h1 {
             font-size: 36px;
-            color: #3d2b8f;
+            color: #2f3d3a;
             margin-bottom: 8px;
         }
 
@@ -61,7 +65,7 @@
             border-radius: 20px;
             padding: 48px 40px;
             width: 320px;
-            box-shadow: 0 10px 30px rgba(61, 43, 143, 0.12);
+            box-shadow: 0 10px 30px rgba(31, 50, 45, 0.12);
             text-decoration: none;
             color: inherit;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -69,7 +73,7 @@
 
         .card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 16px 40px rgba(61, 43, 143, 0.2);
+            box-shadow: 0 16px 40px rgba(31, 50, 45, 0.2);
         }
 
         .card-icon {
@@ -79,7 +83,7 @@
 
         .card h2 {
             font-size: 22px;
-            color: #3d2b8f;
+            color: #2f3d3a;
             margin-bottom: 10px;
         }
 
@@ -92,7 +96,7 @@
 
         .card .btn {
             display: inline-block;
-            background: #6c4df6;
+            background: #111111;
             color: #fff;
             padding: 12px 28px;
             border-radius: 12px;
